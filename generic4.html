@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Trabalho de LP - 3º bimestre</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">CURSO DE GOLANG</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="generic.html">MÓDULO I</a></li>
+					<li><a href="generic2.html">MÓDULO II</a></li>
+					<li><a href="generic3.html">MÓDULO III</a></li>
+					<li><a href="generic4.html">MÓDULO IV</a></li>
+					<li><a href="https://www.youtube.com/watch?v=scry8621MWs">VÍDEOS</a></li>
+					<li><a href="index.html">PARTICIPANTES</a></li>
+				</ul>
+			</nav>
+
+		<!-- Heading -->
+			<div id="heading" >
+				<h1>MÓDULO  IV: PRO</h1>
+			</div>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+							<h2>LABIRINTO DA MENTE</h2>
+							<p>OBJETIVO: Este jogo envolve perguntas e respostas, e suas escolhas afetam o progresso no labirinto mental. Divirta-se explorando e tomando decisões!</p>
+							<p>CÓDIGO:<br><br></p>
+								package main <br>
+								import ( <br>
+									"fmt" <br>
+									"strings" <br>
+								) <br><br>
+
+								func main() {<br>
+									fmt.Println("Bem-vindo ao Labirinto da Mente!")<br>
+									fmt.Println("Você está prestes a embarcar em uma jornada desafiadora para sair deste labirinto mental.")<br>
+									fmt.Println("Para avançar, você deve responder a perguntas e tomar decisões. Escolha sabiamente!")<br><br>
+
+									var jogadorNome string<br>
+									fmt.Print("Antes de começar, qual é o seu nome? ")<br>
+									fmt.Scanln(&jogadorNome)<br>
+									fmt.Printf("Ótimo, %s. Vamos começar!\n", jogadorNome)<br><br>
+
+									var resposta string<br>
+									var avancar bool<br><br>
+
+									// Início do jogo<br>
+									fmt.Println("\nVocê se encontra em um corredor escuro. À sua frente, há três portas numeradas: 1, 2 e 3.")<br>
+									fmt.Print("Qual porta você escolhe? ")<br>
+									fmt.Scanln(&resposta)<br>
+									if strings.TrimSpace(resposta) == "2" {<br>
+										fmt.Println("Você escolheu a porta 2 e entrou em uma sala misteriosa.")<br>
+										fmt.Println("Um enigma é apresentado a você:")<br>
+										fmt.Println("O que é algo que todos têm, mas ninguém pode perder?")<br>
+										fmt.Print("Qual é a sua resposta? ")<br>
+										fmt.Scanln(&resposta)<br>
+										if strings.ToLower(strings.TrimSpace(resposta)) == "um nome" {<br>
+											fmt.Println("Você é inteligente, %s! A resposta está correta.", jogadorNome)<br>
+											avancar = true<br>
+										} else {<br>
+											fmt.Println("Resposta incorreta. A porta se fecha. Você continua sua busca.")<br>
+										}<br>
+									} else {<br>
+										fmt.Println("Você escolheu a porta errada e fica preso em um ciclo infinito de corredores.")<br>
+									}<br><br>
+
+									if avancar {<br>
+										fmt.Println("\nVocê avança para a próxima sala. Há duas opções à sua frente: 'Escada' ou 'Porta Secreta'.")<br>
+										fmt.Print("O que você escolhe? ")<br>
+										fmt.Scanln(&resposta)<br><br>
+
+										if strings.ToLower(strings.TrimSpace(resposta)) == "escada" {<br>
+											fmt.Println("Você sobe as escadas e encontra um grande livro de quebra-cabeças.")<br>
+											fmt.Println("Você decide resolver um quebra-cabeça:")<br>
+											fmt.Println("O que é uma coisa que é sempre quebrada antes de usá-la?")<br>
+											fmt.Print("Qual é a sua resposta? ")<br>
+											fmt.Scanln(&resposta)<br>
+											if strings.ToLower(strings.TrimSpace(resposta)) == "um ovo" {<br>
+												fmt.Println("Incrível, %s! Você resolveu o quebra-cabeça e continua sua jornada.", jogadorNome)<br>
+												avancar = true<br>
+											} else {<br>
+												fmt.Println("Resposta incorreta. As escadas o levam de volta ao início do labirinto.")<br>
+											}<br>
+										} else if strings.ToLower(strings.TrimSpace(resposta)) == "porta secreta" {<br>
+											fmt.Println("Você abre a porta secreta e entra em uma sala iluminada.")<br>
+											fmt.Println("Há uma pergunta à sua frente:")<br>
+											fmt.Println("O que pode correr, mas nunca anda? Tem uma boca, mas nunca fala?")<br>
+											fmt.Print("Qual é a sua resposta? ")<br>
+											fmt.Scanln(&resposta)<br>
+											if strings.ToLower(strings.TrimSpace(resposta)) == "um rio" {<br>
+												fmt.Printf("Impressionante, %s! Sua resposta está correta e você avança ainda mais no labirinto.", jogadorNome)<br>
+												avancar = true<br>
+											} else {<br>
+												fmt.Println("Resposta incorreta. A sala se fecha e você precisa escolher novamente.")<br>
+											}<br>
+										}<br>
+									}<br><br>
+
+									if avancar {<br>
+										fmt.Println("\nVocê continua sua jornada e encontra uma bifurcação no caminho.")<br>
+										fmt.Print("Você escolhe o caminho da esquerda ou da direita? ")<br>
+										fmt.Scanln(&resposta)<br>
+										if strings.ToLower(strings.TrimSpace(resposta)) == "esquerda" {<br>
+											fmt.Println("Você segue o caminho da esquerda e encontra uma chave de ouro brilhante.")<br>
+											fmt.Println("Com a chave em mãos, você alcança a saída do labirinto.")<br>
+											fmt.Printf("Parabéns, %s! Você escapou do Labirinto da Mente com sucesso!\n", jogadorNome)<br>
+										} else if strings.ToLower(strings.TrimSpace(resposta)) == "direita" {<br>
+											fmt.Println("Você escolhe o caminho da direita e encontra uma sala escura. O labirinto continua...")<br>
+										} else {<br>
+											fmt.Println("Você fica paralisado pela indecisão e o labirinto se fecha ao seu redor.")<br>
+										}<br>
+									}<br><br>
+
+									fmt.Println("\nObrigado por jogar o Labirinto da Mente! Esperamos que tenha gostado desta jornada desafiadora.")<br>
+								}
+							<hr>
+							<h2>JOGO DA ADIVINHAÇÃO</h2>
+							<p>OBJETIVO: Neste jogo, o computador escolhe um número aleatório entre 0 e 100, e o jogador tenta adivinhar o número. O programa dará dicas se o palpite do jogador for muito alto ou muito baixo. O jogo continuará até que o jogador adivinhe corretamente o número. Divirta-se!</p>
+							<p>CÓDIGO: <br><br>
+								package main <br>
+								import (<br>
+									"fmt"<br>
+									"math/rand"<br>
+									"time"<br>
+								)<br><br>
+								
+								func main() {<br>
+									rand.Seed(time.Now().UnixNano())<br>
+									numeroAleatorio := rand.Intn(100)<br>
+									tentativas := 0<br><br>
+								
+									fmt.Println("Bem-vindo ao Jogo de Adivinhação!")<br>
+									fmt.Println("Tente adivinhar o número entre 0 e 100.")<br><br>
+								
+									for {<br>
+										var palpite int<br>
+										fmt.Print("Seu palpite: ")<br>
+										_, err := fmt.Scanf("%d", &palpite)<br>
+										if err != nil {<br>
+											fmt.Println("Por favor, insira um número válido.")<br>
+											continue<br>
+										}<br><br>
+								
+										tentativas++<br><br>
+								
+										if palpite < numeroAleatorio {<br>
+											fmt.Println("Tente um número maior.")<br>
+										} else if palpite > numeroAleatorio {<br>
+											fmt.Println("Tente um número menor.")<br>
+										} else {<br>
+											fmt.Printf("Parabéns! Você acertou o número %d em %d tentativas.\n", numeroAleatorio, tentativas)<br>
+											break<br>
+										}<br>
+									}<br>
+								}<br>
+							</p>
+							<hr>
+							<h2>JOGO DE PALAVRAS</h2>
+							<p>OBJETIVO: Neste jogo, o computador escolhe aleatoriamente uma palavra de uma lista e o jogador tenta adivinhar a palavra, fornecendo letras uma de cada vez. O jogador tem um número limitado de tentativas para adivinhar a palavra completa. Divirta-se adivinhando palavras!</p>
+							<p>CÓDIGO: <br><br>
+								package main<br>
+								import (<br>
+									"fmt"<br>
+									"math/rand"<br>
+									"strings"<br>
+									"time"<br>
+								)<br><br>
+
+								func main() {<br>
+									rand.Seed(time.Now().UnixNano())<br><br>
+
+									palavras := []string{"gato", "cachorro", "pássaro", "elefante", "girafa", "macaco"}<br>
+									palavraAleatoria := palavras[rand.Intn(len(palavras))]<br>
+									palavraAdivinhada := strings.Repeat("_", len(palavraAleatoria))<br>
+									tentativas := 0<br><br>
+
+									fmt.Println("Bem-vindo ao Jogo de Adivinhação de Palavras!")<br>
+									fmt.Println("Tente adivinhar a palavra oculta.")<br><br>
+
+									for {<br>
+										fmt.Printf("Palavra atual: %s\n", palavraAdivinhada)<br>
+										var palpite string<br>
+										fmt.Print("Digite uma letra: ")<br>
+										_, err := fmt.Scanf("%s", &palpite)<br>
+										if err != nil || len(palpite) != 1 {<br>
+											fmt.Println("Por favor, insira uma única letra válida.")<br>
+											continue<br>
+										}<br><br>
+
+										tentativas++<br>
+										palpite = strings.ToLower(palpite)<br><br>
+
+										novaPalavraAdivinhada := ""<br>
+										acertou := false<br><br>
+
+										for i, letra := range palavraAleatoria {<br>
+											if string(letra) == palpite {<br>
+												novaPalavraAdivinhada += palpite<br>
+												acertou = true<br>
+											} else {<br>
+												novaPalavraAdivinhada += string(palavraAdivinhada[i])<br>
+											}<br>
+										}<br><br>
+
+										if !acertou {<br>
+											fmt.Println("Letra errada. Tente novamente.")<br>
+										} else {<br>
+											fmt.Println("Você acertou uma letra!")<br>
+										}<br><br>
+
+										palavraAdivinhada = novaPalavraAdivinhada<br><br>
+
+										if palavraAdivinhada == palavraAleatoria {<br>
+											fmt.Printf("Parabéns! Você adivinhou a palavra \"%s\" em %d tentativas.\n", palavraAleatoria, tentativas)<br>
+											break<br>
+										}<br>
+									}<br>
+								}
+							</p>
+						</header>	
+					</div>
+				</div>
+			</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<div class="content">
+							<section>
+								<h3>PROJETO</h3>
+								<p>Todo o projeto apresentado, incluindo o site e as video aulas, além, lógicamente de todo o conteúdo educacional, foi produzido e disponibilizado pelos alunos integrantes do grupo. O mesmo é baseado em cursos de programação e artigos encontrados na internet.</p>
+							</section>
+							<section>
+								<h4>INTEGRANTES</h4>
+								<ul class="alt">
+									<li>Ysabella Caroline</li>
+									<li>Matheus Muller</li>
+									<li>Giulia Mira</li>
+									<li>Julia Esbano</li>
+								</ul>
+							</section>
+							
+						</div>
+						<div class="copyright">
+							&copy; Todos direitos reservados à sala do Segundo ano de Automação - CTIG UNESP</a>.
+						</div>
+					</div>
+				</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
